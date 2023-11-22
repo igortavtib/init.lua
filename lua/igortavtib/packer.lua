@@ -11,7 +11,7 @@ return require("packer").startup(function(use)
 
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
-	use({ "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } })
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
 	use({
 		"ThePrimeagen/harpoon",
@@ -55,7 +55,7 @@ return require("packer").startup(function(use)
 		}
 	})
 
-	use 'mfussenegger/nvim-dap'
+	use('mfussenegger/nvim-dap')
 
 	use({
 		"nvim-lualine/lualine.nvim",
