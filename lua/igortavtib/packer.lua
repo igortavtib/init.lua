@@ -63,4 +63,6 @@ return require("packer").startup(function(use)
 	})
 
 	use({ 'rcarriga/nvim-dap-ui', requires = { "mfussenegger/nvim-dap" } })
+
+	use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, })
 end)
