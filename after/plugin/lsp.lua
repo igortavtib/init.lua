@@ -1,8 +1,6 @@
 local lsp_zero = require("lsp-zero")
 
 lsp_zero.on_attach(function(client, bufnr)
-    -- see :help lsp-zero-keybindings
-    -- to learn the available actions
     lsp_zero.default_keymaps({ buffer = bufnr })
     lsp_zero.buffer_autoformat()
 end)
@@ -16,20 +14,19 @@ lsp_config.lua_ls.setup({
         Lua = {
             runtime = {
                 version = "LuaJIT"
+            },
+            diagnostics = {
+                globals = {
+                    'vim',
+                }
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true)
+            },
+            telemetry = {
+                enable = false,
             }
         },
-        diagnostics = {
-            globals = {
-                'vim',
-                'reuire'
-            }
-        },
-        workspace = {
-            library = vim.api.nvim_get_runtime_file("", true)
-        },
-        telemetry = {
-            enable = false,
-        }
     }
 })
 
@@ -37,7 +34,7 @@ lsp_config.tsserver.setup({
     settings = {
         completions = {
             completeFunctionCalls = true,
-        }
+        },
     }
 })
 
@@ -56,6 +53,6 @@ lsp_config.rust_analyzer.setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require 'lspconfig'.html.setup {
+lsp_config.html.setup {
     capabilities = capabilities,
 }
