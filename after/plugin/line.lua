@@ -1,7 +1,10 @@
 local lualine = require('lualine')
 
 lualine.setup {
-	options = {
-		icons_enabled = true,
-	}
+    sections = {
+        lualine_x = { 'aerial' }
+    },
+    options = {
+        icons_enabled = true,
+    }
 }

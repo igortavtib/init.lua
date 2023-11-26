@@ -76,4 +76,6 @@ return require("packer").startup(function(use)
             "ibhagwan/fzf-lua",
         },
     })
+
+    use({ "stevearc/aerial.nvim" })
 end)
