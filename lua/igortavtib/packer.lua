@@ -78,4 +78,6 @@ return require("packer").startup(function(use)
     })
 
     use({ "stevearc/aerial.nvim" })
+
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 end)
