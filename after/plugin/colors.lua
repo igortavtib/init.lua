@@ -1,12 +1,11 @@
-local catppuccin = require("catppuccin")
+local tokyonight = require('tokyonight')
 
-catppuccin.setup({
-	flavour = "mocha",
-	background = {
-		light = "latte",
-		dark = "mocha"
-	},
-	transparent_background = true,
+tokyonight.setup({
+  style = 'night',
+  transparent = true,
+  styles = {
+    sidebars = "transparent",
+  }
 })
 
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme tokyonight]]
