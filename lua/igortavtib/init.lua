@@ -1,2 +1,1 @@
-require("igortavtib.remap")
-require('igortavtib.set')
+require("igortavtib.lazy")
