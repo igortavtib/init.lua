@@ -25,7 +25,9 @@ return {
 
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
-      lspconfig["lua_ls"].setup({
+      vim.filetype.add({ extension = { templ = "templ" } })
+
+      lspconfig.lua_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         settings = {
@@ -66,6 +68,28 @@ return {
           }
         }
       })
+
+      lspconfig.gopls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
+      lspconfig.templ.setup({
+        on_attach = on_attach,
+        capabilities = capabilities
+      })
+
+      lspconfig.html.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "html", "templ" },
+      })
+
+      lspconfig.htmx.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+        filetypes = { "html", "templ" }
+      })
     end
 	},
 	{
@@ -87,7 +111,11 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
-          "tsserver"
+          "tsserver",
+          "gopls",
+          "templ",
+          "html",
+          "htmx",
         },
 
         automatic_installation = true,
@@ -96,7 +124,6 @@ return {
       mason_tool_installer.setup({
         ensure_installed = {
           "eslint",
-          "stylua"
         }
       })
     end
