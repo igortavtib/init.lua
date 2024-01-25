@@ -7,7 +7,7 @@ return {
         style = "night",
         transparent = true,
         styles = {
-          sidebars = "tranparent",
+          sidebars = "transparent",
         }
       })
 
