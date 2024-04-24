@@ -17,7 +17,8 @@ return {
 				  "vimdoc",
 				  "rust",
           "go",
-          "templ"
+          "templ",
+          "tsx"
 			  }
       })
     end
