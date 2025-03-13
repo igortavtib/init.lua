@@ -10,6 +10,12 @@ return {
        typescript = {
          require("formatter.filetypes.typescript").eslint
        },
+       javascriptreact = {
+         require("formatter.filetypes.javascript").eslint
+       },
+       typescriptreact = {
+         require("formatter.filetypes.typescript").eslint
+       },
        go = {
          require("formatter.filetypes.go").gofumpt
        },
