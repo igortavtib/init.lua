@@ -60,7 +60,7 @@ return {
         }
       });
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         on_attach = on_attach,
         capabilities = capabilities,
         init_options = {
@@ -71,7 +71,13 @@ return {
       })
 
       lspconfig.eslint.setup({
-        on_attach = on_attach,
+        on_attach = function(client, bufnr)
+          on_attach(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
         capabilities = capabilities
       })
 
@@ -144,7 +150,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
-          "tsserver",
+          "ts_ls",
           "gopls",
           "templ",
           "html",
