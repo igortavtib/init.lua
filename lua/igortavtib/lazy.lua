@@ -13,6 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "igortavtib.plugins" } }, {
   install = {
-    colorscheme = { "tokyonight" },
+    colorscheme = { "rose-pine" },
   }
 })

@@ -18,7 +18,8 @@ return {
 				  "rust",
           "go",
           "templ",
-          "tsx"
+          "tsx",
+          "proto"
 			  }
       })
     end
